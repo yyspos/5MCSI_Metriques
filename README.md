@@ -64,7 +64,7 @@ Vous avez créer un hébergement (gratuit) et découvert également que vous pou
 ---------------------------------------------------------------------------------------------
 Séquence 3 : Les Actions GitHUB (Industrialisation Continue)
 ---------------------------------------------------------------------------------------------
-Objectif : Automatiser la mise à jour de votre hébergement Alwaysdata
+Objectif : Automatiser la mise à jour de votre hébergement Alwaysdata  
 Difficulté : Moyenne (~15 minutes)
 ---------------------------------------------------------------------------------------------
 Dans le Repository GitHUB que vous venez de créer précédemment lors de la séquence 1, vous avez un fichier intitulé CICD.yml et qui est déposé dans le répertoire .github/workflows. Ce fichier a pour objectif d'automatiser le déploiement de votre code sur votre site Alwaysdata. Pour information, c'est ce que l'on appel des actions GitHUB. Ce sont des scripts qui s'exécutent automatiquement lors de chaque Commit dans votre projet (modification de votre code). Ces scripts (appelés actions) sont au format yml.  
