@@ -29,7 +29,7 @@ jobs:
             git clone https://github.com/OpenRSI/5MCSI_Metriques.git
             # Vérifier si le répertoire de destination existe
             if [ "$(ls -A ./flask)" ]; then
-              rsync -r ./5MCSI_Metriques/ ./flask
+              rsync -r ./5MCSI_Metriques/ ./flask3
               rm -rf ./5MCSI_Metriques
             else
               echo "Le répertoire flask de destination sur votre serveur n'existe pas"
