@@ -26,7 +26,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd $HOME/www/
-            git clone ${{ github.repository }}
+            git clone https://github.com/${{ github.repository }}.git
             # Vérifier si le répertoire de destination existe
             if [ "$(ls -A ./flask)" ]; then
               rsync -r ./5MCSI_Metriques/ ./flask3
