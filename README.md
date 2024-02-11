@@ -11,7 +11,7 @@ Large programme mais tout à fait accessible et ne nécessitant pas de base tech
 Séquence 1 : GitHUB
 -------------------------------------------------------------------------------------------------------
 Objectif : Création d'un repository GitHUB pour travailler avec son code  
-Difficulté : Très faible (~5 minutes)
+Difficulté : Très faible (~10 minutes)
 -------------------------------------------------------------------------------------------------------
 GitHUB est une plateforme en ligne utilisée pour stocker le code de son programme.
 GitHUB est organisé en "Repository", c'est à dire en répertoire (contenant lui même des sous répertoires et des fichiers). Chaque Repository sera indépendant des autres. Un Repository peu être vu comme un projet unique.
@@ -54,7 +54,7 @@ Remarque : **Attention à bien vous rappeler vos Login/Password** lors de la cr�
  . 3.3 - Définissez si besion un nouveau mot de passe  
  . 3.4 - Cliquez sur **Activer la connexion par mot de passe**  
 
-Si besoin, voici une vidéo d'accompagnement pour vous aider dans cette séquence de création d'une site sur Alwaysdata : [Vidéo Alwaysdata](https://youtu.be/6cuHjy8n968)  
+Si besoin, voici une vidéo d'accompagnement pour vous aider dans cette séquence de création d'un site sur Alwaysdata : [Vidéo Alwaysdata](https://youtu.be/6cuHjy8n968)  
   
 **Travail demandé :** Mettre en ligne votre application Flask "Hello World !" et **copier l'URL de votre site dans la discussion Discord**.  
   
@@ -77,9 +77,20 @@ Pour ce projet vous avez 4 secrets à créer dans votre Repository que vous deve
 **ALWAYSDATA_TOKEN** = Le token est à créer depuis l'interface d'administration Alwaysdata. Cliquez sur votre profil en haut à droite, puis sur 'Profil' puis sur 'Gérer les tokens'. Laissez le champ "Adresses IP autorisées" vide. Dans le cas contraire vous limiteriez les connexions seulement une adresse IP. Pour le champ Application* mettez "flask" par exemple.  
 **ALWAYSDATA_SITE_ID** = Vous trouverez l'ID de votre site depuis l'interface d'administration Alwaysdata dans les paramètres de votre site (dans le titre #XXXXX) XXXXX étant l'ID de votre site. Ne prenez pas le # mais juste les chiffres.  
   
-Ci-dessous une vidéo pour vous expliquer le processus de création des secrets dans GitHUB.  
+Voici une vidéo pour vous expliquer le processus de création de vos secrets dans GitHUB : [Création des secrets](https://youtu.be/pi80zRdrJyQ) 
 
+Notions acquises de cette séquence :  
+Nous avons vu dans cette séquence comment créer des secrets GiHUB afin de mettre en place l'industrialisation continue.  
+L'utilité des scripts d'actions (C'est à dire scripts exécutés lors des Commits) est très importante  mais sortes malheureusement du cadre de cet atelier faute de temps. Toutefois, je vous invites à découvrir cet outil via les différentes sources du Web.  
 
+---------------------------------------------------
+Séquence 4 : Exercices
+---------------------------------------------------
+Objectif : Apprendre à créer votre application de monitoring
+Difficulté : Moyenne
+---------------------------------------------------
+Votre solution est à présent en ligne. Rendez-vous sur la page d'accueil de votre site et suivez les instructions pour réaliser les exercices qui vous sont demandés.  
+Bon courage et bon travail à tous.
 
 
 
