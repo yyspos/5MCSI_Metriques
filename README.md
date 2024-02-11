@@ -1,9 +1,8 @@
 ------------------------------------------------------------------------------------------------------
 PROJET METRIQUES
 ------------------------------------------------------------------------------------------------------
-Quelles sont les notions qui vont être abordées lors cet atelier ?
-Cet atelier a pour objectif de vous apprendre à créer des graphiques (dans le cadre de création de métriques) grace à une application Python et la construction d'API.
-Vous allez utiliser et mettre en oeuvre, au travers de cet atelier, un serveur Python utilisant le frameworks Flask. 
+Quelles sont les notions qui vont être abordées au cours de cet atelier ?
+Cet atelier a pour objectif de vous apprendre à créer des graphiques (dans le cadre de création de métriques par exemple) grace à une application Python et via la construction d'API. Vous allez utiliser et mettre en oeuvre, au travers de cet atelier, un serveur Python utilisant le Framework Flask. 
 Vous allez créer des API, découvrir les Actions et les Secrets GitHUB pour au final mettre en service des bibliothèques graphiques.
 Large programme mais tout à fait accessible et ne nécessitant pas de base technique particulière. Juste de l'observation et de la rigueur dans votre travail.
 
@@ -67,13 +66,13 @@ Séquence 3 : Les Actions GitHUB (Industrialisation Continue)
 Objectif : Automatiser la mise à jour de votre hébergement Alwaysdata  
 Difficulté : Moyenne (~15 minutes)
 ---------------------------------------------------------------------------------------------
-Dans le Repository GitHUB que vous venez de créer précédemment lors de la séquence 1, vous avez un fichier intitulé CICD.yml et qui est déposé dans le répertoire .github/workflows. Ce fichier a pour objectif d'automatiser le déploiement de votre code sur votre site Alwaysdata. Pour information, c'est ce que l'on appel des actions GitHUB. Ce sont des scripts qui s'exécutent automatiquement lors de chaque Commit dans votre projet (modification de votre code). Ces scripts (appelés actions) sont au format yml.  
+Dans le Repository GitHUB que vous venez de créer précédemment lors de la séquence 1, vous avez un fichier intitulé CICD.yml et qui est déposé dans le répertoire .github/workflows. Ce fichier a pour objectif d'automatiser le déploiement de votre code sur votre site Alwaysdata. Pour information, c'est ce que l'on appel des Actions GitHUB. Ce sont des scripts qui s'exécutent automatiquement lors de chaque Commit dans votre projet (C'est à dire à chaque modification de votre code). Ces scripts (appelés actions) sont au format yml qui est un format structuré proche de celui d'XML.  
 
-Pour utiliser cette action (CICD.yml), **vous avez besoin de créer des secrets dans GitHUB** afin de ne pas divulguer des informations sensibles aux internautes de passage dans votre Repository (Vos login/password par exemple).  
+Pour utiliser cette Action (CICD.yml), **vous avez besoin de créer des secrets dans GitHUB** afin de ne pas divulguer des informations sensibles aux internautes de passage dans votre Repository comme vos login et password par exemple.  
 
-Pour ce projet **vous avez 4 secrets à créer** dans votre Repository GitHUB :
-**USERNAME** = Le login qui sera utilisé pour la connexion SSH.  
-**PASSWORD** = Le mot de passe qui sera utilisé pour la connexion SSH.  
+Pour ce projet Métriques, **vous avez 4 secrets à créer** dans votre Repository GitHUB :
+**USERNAME** = Le login qui est utilisé pour la connexion SSH.  
+**PASSWORD** = Le mot de passe qui est utilisé pour la connexion SSH.  
 **ALWAYSDATA_TOKEN** = Le token est à créer depuis l'interface d'administration Alwaysdata. Cliquez sur votre profil en haut à droite, puis sur 'Profil' puis sur 'Gérer les tokens'. Laissez le champ "Adresses IP autorisées" vide. Dans le cas contraire vous limiteriez les connexions seulement à une adresse IP. Pour le champ Application* mettez "Metriques" par exemple.  
 **ALWAYSDATA_SITE_ID** = Vous trouverez l'ID de votre site depuis l'interface d'administration Alwaysdata dans les paramètres de votre site (dans le titre #XXXXX) XXXXX étant l'ID de votre site. Ne prenez pas le # mais juste les chiffres.  
   
@@ -81,7 +80,7 @@ Voici une vidéo pour vous expliquer le processus de création de vos secrets da
 
 Notions acquises de cette séquence :  
 Vous avez vu dans cette séquence comment créer des secrets GiHUB afin de mettre en place de l'industrialisation continue.  
-L'utilité des scripts d'actions (C'est à dire scripts exécutés lors des Commits) est très importante mais sortes malheureusement du cadre de cet atelier faute de temps. Toutefois, je vous invites à découvrir cet outil via les différentes sources du Web.  
+L'utilité des scripts d'actions (C'est à dire des scripts exécutés lors des Commits) est très importante mais sortes malheureusement du cadre de cet atelier faute de temps. Toutefois, je vous invites à découvrir cet outil via les différentes sources du Web (Google, ChatGPT, etc..).  
 
 ---------------------------------------------------
 Séquence 4 : Exercices
