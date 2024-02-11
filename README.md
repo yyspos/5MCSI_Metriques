@@ -14,15 +14,14 @@ Objectif : Création d'un repository GitHUB pour travailler avec son code
 Difficulté : Faible (~10 minutes)
 -------------------------------------------------------------------------------------------------------
 GitHUB est une plateforme en ligne utilisée pour stocker le code de son programme.
-GitHUB est organisé en "Repository", c'est à dire en répertoire (contenant lui même des sous répertoires et des fichiers).
-Chaque Repository est indépendant des autres. Un Repository peu être vu comme un projet unique.
+GitHUB est organisé en "Repository", c'est à dire en répertoire (contenant lui même des sous répertoires et des fichiers). Chaque Repository sera indépendant des autres. Un Repository peu être vu comme un projet unique.
 
 **Procedure :**
 1° - Créer vous un compte sur GitHub : https://github.com/
-Pour vous aider à créer votre compte GitHUB si besoin : https://docs.github.com/fr/get-started/onboarding/getting-started-with-your-github-account
-Si vous possédez déjà un compte GitHUB vous pouvez le conserver pour réaliser cet atelier.
+Si besoin, un vidéo pour vous aider à créer votre propre compte GitHUB : https://docs.github.com/fr/get-started/onboarding/getting-started-with-your-github-account
+A noter que si vous possédez déjà un compte GitHUB vous pouvez le conserver pour réaliser cet atelier. Pas besion d'en créer un nouveau.
 
-2° - Faire un fork du projet suivant : https://github.com/bstocker/flask_hello_world.git
+2° - Faites un Fork de ce Repository :
 Support vidéo d'accompagnement pour "Forker" un projet : https://www.youtube.com/watch?v=yoBAszjRI3o
 
 Remarque : Pour faciliter l'atelier ne modifiez pas le nom de votre fork et intitulez le flask_hello_world
