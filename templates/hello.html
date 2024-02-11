@@ -31,4 +31,23 @@ Vous observerez que nous utilisons une API gratuite fourni par Openweathermap.
 C'est typiquement le format que vous trouverez dans le cadre des métriques (serveurs, réseaux, etc..).</p>
 <p></p>Les API fournissant en général des données au format JSON. JSON est format structuré avec des étiquettes, également appelé des keys, qui ont pour objectif de fournir des données "brut".<br/>
 <b>Prenez quelques minutes pour "comprendre" la structure de ces données JSON.</b></p>
+<p>- - - - - </p>
+<p>Ce qui nous intérèsse ici, c'est d'extraire de valeur de [dt], c'est à dire les dates et les valeurs de [temp][day], c'est à dire les température du jour.</p>
+<p>A noter que les dates sont au format "Timestamp", c'est à dire c'est le nombre de secondes depuis le 1 janvier 2000 (un légacy d'UNIX).
+Les températures sont au format Kelvin (qu'il faudra convertir en °C).</p> 
+<p>Vous allez à présent créer une nouvelle route "/paris/" dans votre application python pour filtrer l'API d'Openweathermap et extraire uniquement les dates et température du jour.
+Ci-dessous la route à ajouter à votre application.</p>
+<pre><code><xmp>
+@app.route('/paris/')
+def meteo():
+    response = urlopen('https://api.openweathermap.org/data/2.5/forecast/daily?q=Paris,fr&cnt=16&appid=bd5e378503939ddaee76f12ad7a97608')
+    raw_content = response.read()
+    json_content = json.loads(raw_content.decode('utf-8'))
+    results = []
+    for list_element in json_content.get('list', []):
+        dt_value = list_element.get('dt')
+        temp_day_value = list_element.get('temp', {}).get('day') - 273.15 # Conversion de Kelvin en °c 
+        results.append({'Jour': dt_value, 'temp': temp_day_value})
+    return jsonify(results=results)
+</xmp></code></pre>    
 
