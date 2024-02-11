@@ -89,8 +89,4 @@ Séquence 4 : Exercices
 Objectif : Apprendre à créer votre application de monitoring  
 Difficulté : Moyenne
 ---------------------------------------------------
-Votre solution est à présent en ligne. Rendez-vous sur la page d'accueil de votre site et suivez les instructions pour réaliser les exercices qui vous sont demandés.  
-Bon courage et bon travail à tous.
-
-
-
+Votre solution est à présent en ligne. Rendez-vous sur la page d'accueil de votre site et suivez les instructions pour réaliser les exercices qui vous sont demandés. Bon courage et bon travail à tous.
