@@ -36,7 +36,7 @@ C'est typiquement le format que vous trouverez dans le cadre des métriques (ser
 <p>A noter que les dates sont au format "Timestamp", c'est à dire c'est le nombre de secondes depuis le 1 janvier 2000 (un légacy d'UNIX).
 Les températures sont au format Kelvin (qu'il faudra convertir en °C).</p> 
 <p>Vous allez à présent créer une nouvelle route "/paris/" dans votre application python pour filtrer l'API d'Openweathermap et extraire uniquement les dates et température du jour.
-Ci-dessous la route à ajouter à votre application.</p>
+Ci-dessous la route à ajouter à votre application.
 <pre><code><xmp>
 @app.route('/paris/')
 def meteo():
@@ -49,5 +49,87 @@ def meteo():
         temp_day_value = list_element.get('temp', {}).get('day') - 273.15 # Conversion de Kelvin en °c 
         results.append({'Jour': dt_value, 'temp': temp_day_value})
     return jsonify(results=results)
-</xmp></code></pre>    
+</xmp></code></pre></p>
+<p>- - - - - </p>
+<h2>Exercice 3 Bis : Les fichiers HTML</h2>
+<p>Le framework Flask nous impose de déposer les fichiers HTML dans le répertoire templates.
+Depuis GitHUB, nous allons donc créer et déposer dans le répertoire "templates" une page HTML qui sera accessible depuis la route suivante : https://{VOTRE_URL}/rapport/
+</p>
+<p>Etape 1.1 : Création d'un simple fichier graphique.html
+Dans votre répertoire templates, créez un fichier graphique.html contenant le code suivant :
+<pre><code><xmp>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Graphique</title>
+ </head>  
+<body>
+    <h2>Mon Graphique</h2>
+</body>
+</html>
+</xmp></code></pre></p>
+<p>Etape 1.2 : Création d'une route
+Créez à présent une route afin de pouvoir consulter votre fichier HTML.
+Ajouter le code ci-dessous dans votre fichier __init__.py :
+<pre><code><xmp>
+@app.route("/rapport/")
+def mongraphique():
+    return render_template("graphique.html")
+</xmp></code></pre></p>
+</p
+<p>Notions acquises de cet exerice : Nous avons vu dans cet exercice comment créer et où déposer les fichiers HTML dans le frameworks Flask.
+Nous avons vu que les Framework (cadre de travail) nous impose donc une structure de travail.
+</p>
+<p>- - - - - </p>
+<h2>Exercice 3 Ter : Transfert de données</h2>
+<p>Mettons ces chiffres sous la forme d'un graphique qui sera pour l'utilisateur bien plus agréable à lire.
+Pour cela, nous devons utiliser les données de notre API /rapport/ et les intégrer dans notre fichier HTML.
+Nous allons utiliser utiliser une blibliothèque opensource de Google pour créer des graphique.</p>
+<p>Modifier votre précédent fichier graphique.html et remplacer son code par celui-ci :
+<pre><code><xmp>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metrique</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>  
+
+  <body>
+    <div id="chart_div"></div>
+    <script>
+      google.charts.load('current', { packages: ['corechart'] });
+      google.charts.setOnLoadCallback(drawBackgroundColor);
+     function drawBackgroundColor() {
+    function drawChart(data) {
+    // Convertir les données récupérées en un tableau utilisable par Google Charts
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn('string', 'Date');
+    dataTable.addColumn('number', 'Valeur');
+    data.results.forEach(entry => {
+      var date = new Date(entry.Jour * 1000);
+      dataTable.addRow([date.toLocaleDateString(), entry.temp]);
+    });
+
+    // Configurer les options du graphique en ligne
+    var options = {
+      title: 'Évolution des températures de Paris pour les 16 prochains jours',
+      curveType: 'function',
+      legend: { position: 'bottom' }
+    };
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    chart.draw(dataTable, options);
+  }
+  // Récupération de données depuis notre API /paris/
+  fetch('/paris/')
+    .then(response => response.json())
+    .then(data => {
+      drawChart(data);
+    })
+}
+    </script>
+  </body>
+</html>
+</xmp></code></pre></p>
+<p>Notions acquises de cette séquence : Bravo ! Vous êtes à présent tous les outils qui vous permettrons de créer vos propres tableaux de bord.
+Vous savez réccupérer des données issues d'une API externe , l'adapter à vos besions et créer vos propres graphiques.</p>
 
