@@ -11,14 +11,15 @@
 <h3>Exercice 1 : Création d'un route (2 points)</h3>
 <p>Création d'une nouvelle route (c'est à dire la création d'une API)</p>
 L'exercice consiste à créer une nouvelle route /en/ qui affichera "Hello World !"
-C'est à dire que l'internaute saisira l'adresse suivante dans son navigateur : <b>https://{Votre URL}/en/</b> et obtiendra le résultat "Hello World !". Vous allez pour cela, depuis GitHUB, ajouter le code suivant dans votre fichier <b>__init__.py</b> :</p>
-<pre>
-  <code><xmp>
+C'est à dire que l'internaute saisira l'adresse suivante dans son navigateur : <b>https://{Votre URL}/en/</b> et obtiendra le résultat "Hello World !". Vous allez pour cela, depuis GitHUB, ajouter le code suivant dans votre fichier <b>__init__.py</b> :
+<pre><code><xmp>
 @app.route("/en/")
 def MonPremierAPI():
     return "<h2>Hello World !</h2>"
-  </xmp></code>
-</pre>
+</xmp></code></pre>
+Remarque importante : Ce code est à ajouter entre le bloc "app = Flask(__name__)" qui est le début du programme et le bloc "if __name__ == "__main__" qui est le lancement de l'application Python.</br>
+<b>Attention l'indentation est très importante dans Python.</b>
+</p>
 
 <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
 
