@@ -10,7 +10,6 @@ jobs:
           host: ${{ secrets.HOST_DNS }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          key: ${{ secrets.SSH_KEY }}
           script: |
             cd $HOME/www/
   Copy:
