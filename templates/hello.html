@@ -8,5 +8,10 @@
 <p>Création d'une nouvelle route (c'est à dire la création d'une API)</p>
 L'exercice consiste à créer une nouvelle route /en/ qui affichera "Hello World !"
 C'est à dire que l'internaute saisira l'adresse suivante dans son navigateur : <b>https://{Votre URL}/en/</b> et obtiendra le résultat "Hello World !". Vous allez pour cela, depuis GitHUB, ajouter le code suivant dans votre fichier <b>__init__.py</b> :</p>
+<code>
+@app.route("/fr/")
+def monfr():
+    return "<h2>Hello World !</h2>"
+</code>
 <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
 
