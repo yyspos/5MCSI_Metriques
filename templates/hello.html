@@ -34,8 +34,7 @@ Vous observerez que nous utilisons une API gratuite fourni par Openweathermap. C
 <p>- - - - - </p>
 <p>Ce qui nous intéresse à présent, c'est extraire de valeur de [dt] (c'est à dire les dates) et les valeurs stockées dans la clé [temp][day] (c'est à dire les températures du jour).</p>
 <p>A noter que les dates ici sont au format "Timestamp". C'est à dire que la donnée est le nombre de secondes depuis le 1 janvier 2000 (un légacy d'UNIX). Les températures sont stockées au format Kelvin (il faudra donc les convertir en °C).</p> 
-<p>Vous allez à présent créer une nouvelle route "/paris/" dans votre application Python pour filtrer l'API d'Openweathermap et extraire uniquement les dates et température du jour.
-Ci-dessous la route à ajouter à votre application.
+<p>Vous allez à présent créer une nouvelle route "/paris/" dans votre application Python pour filtrer l'API d'Openweathermap et extraire uniquement les dates et température du jour. Ci-dessous la route à ajouter à votre application.
 <pre><code><xmp>
 @app.route('/paris/')
 def meteo():
@@ -49,7 +48,7 @@ def meteo():
         results.append({'Jour': dt_value, 'temp': temp_day_value})
     return jsonify(results=results)
 </xmp></code></pre></p>
-<p>Testez cette nouvelle route et observer le résultat</p>    
+<p>Testez cette nouvelle route et observer le résultat.</p>    
 <p>- - - - - </p>
 <b>Exercice 3 Bis : Les fichiers HTML</b>
 <p>Objectif : Comprendre la philosophie des Frameworks</p>
@@ -160,3 +159,4 @@ def extract_minutes(date_string):
         return jsonify({'minutes': minutes})
 </xmp></code></pre></p>
 <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+<h2>FIN DU PROJET</h2>
