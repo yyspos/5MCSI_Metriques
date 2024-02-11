@@ -8,7 +8,7 @@
 <p>Modifier le fichier hello.html de votre projet GitHUB afin de préciser votre Prénom et Nom dans la page d'accueil</p>
 <p>Notion accquise lors de cet exercice : Vous avez pris connaissance de votre environnement GitHUB avec ses fichiers, ses répertoires et ses "Commits".</p>
 <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
-<h3>Exercice 1 : Création d'un route (2 points)</h3>
+<h3>Exercice 2 : Création d'un route (2 points)</h3>
 <p>Création d'une nouvelle route (c'est à dire la création d'une API)</p>
 L'exercice consiste à créer une nouvelle route /en/ qui affichera "Hello World !"
 C'est à dire que l'internaute saisira l'adresse suivante dans son navigateur : <b>https://{Votre URL}/en/</b> et obtiendra le résultat "Hello World !". Vous allez pour cela, depuis GitHUB, ajouter le code suivant dans votre fichier <b>__init__.py</b> :
@@ -17,9 +17,18 @@ C'est à dire que l'internaute saisira l'adresse suivante dans son navigateur : 
 def MonPremierAPI():
     return "<h2>Hello World !</h2>"
 </xmp></code></pre>
-Remarque importante : Ce code est à ajouter entre le bloc "app = Flask(__name__)" qui est le début du programme et le bloc "if __name__ == "__main__" qui est le lancement de l'application Python.</br>
-<b>Attention l'indentation est très importante dans Python.</b>
+Remarque importante : Ce code est à ajouter entre le bloc "app = Flask(__name__)" qui est le début du programme et le bloc "if __name__ == "__main__" à la fin du fichier qui est le lanceur de l'application Python.
+<b>Attention l'indentation est très importante en Python.</b>
 </p>
-
+<p>Notion accquise lors de cet exercice : Vous avez appris à créer des API (des routes) dans une application Python. Vous pouvez créer autant d'API que vous le souhaitez.</p>
 <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
+<h3>Exercice 3 : Les données d'une API</h3>
+<p>Objectif : Utiliser des API externes pour en créer une nouvelle adaptée à vos besions.</p>
+<p>Copier l'URL dans un nouvel onglet de navigateur et observez le résultat :
+https://api.openweathermap.org/data/2.5/forecast/daily?q=Paris,fr&cnt=16&appid=bd5e378503939ddaee76f12ad7a97608<br/>
+Il s'agit ici des prévisions météorologique de Paris pour les 16 prochains jours.
+Vous observerez que nous utilisons une API gratuite fourni par Openweathermap.
+C'est typiquement le format que vous trouverez dans le cadre des métriques (serveurs, réseaux, etc..).
+Ce sont des API fournissant des données au format JSON. JSON est format structuré avec des étiquettes, également appelé des keys, qui ont pour objectif de fournir des données "brut".<br/>
+<b>Prenez quelques minutes pour "comprendre" la structure de ces données JSON.</b></p>
 
