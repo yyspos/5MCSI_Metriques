@@ -37,8 +37,10 @@ Difficulté : Faible (~10 minutes)
 
 Rendez-vous sur **https://www.alwaysdata.com/fr/**  
   
-Remarque : **Attention à bien vous rappeler de vos Login/Password** lors de la création de votre compte site car vous en aurez besoin plus tard pour la création de vos Secrets GitHUB.
-
+Remarque : **Attention à bien vous rappeler de vos Login/Password** lors de la création de votre compte site car vous en aurez besoin plus tard pour la création de vos Secrets GitHUB.  
+  
+Voici une vidéo d'accompagnement pour vous aider dans cette séquence de création d'un site sur Alwaysdata : [Vidéo Alwaysdata](https://youtu.be/6cuHjy8n968)  
+  
 **Procédure :**  
 1° - Créez votre compte Alwaysdata (gratuit jusqu'à 100Mo, aucune carte nécéssaire).  
 2° - Depuis la console d'administration (Le panel d'administration de Alwaysdata) :  
@@ -52,8 +54,6 @@ Remarque : **Attention à bien vous rappeler de vos Login/Password** lors de la 
  . 3.2 - Modifier les paramètres de votre utilisateur.  
  . 3.3 - Définissez si besion un nouveau mot de passe.  
  . 3.4 - Cliquez sur **Activer la connexion par mot de passe**.  
-
-Voici une vidéo d'accompagnement pour vous aider dans cette séquence de création d'un site sur Alwaysdata : [Vidéo Alwaysdata](https://youtu.be/6cuHjy8n968)  
   
 **Travail demandé :** Mettre en ligne votre application Flask "Hello World !" et **copier l'URL de votre site dans la discussion public**.  
   
