@@ -2,7 +2,7 @@
 PROJET METRIQUES
 ------------------------------------------------------------------------------------------------------
 Quelles sont les notions qui vont être abordées au cours de cet atelier ?
-Cet atelier a pour objectif de vous apprendre à créer des graphiques (dans le cadre de création de métriques par exemple) grace à une application Python et via la construction d'API. Vous allez utiliser et mettre en oeuvre, au travers de cet atelier, un serveur Python utilisant le Framework Flask. 
+Cet atelier a pour objectif de vous apprendre à créer des graphiques (dans le cadre de création de métriques par exemple) grace à une application Python et via la construction d'API. Vous allez utiliser et mettre en oeuvre au travers de cet atelier, un serveur Python utilisant le Framework Flask. 
 Vous allez créer des API, découvrir les Actions et les Secrets GitHUB pour au final mettre en service des bibliothèques graphiques.
 Large programme mais tout à fait accessible et ne nécessitant pas de base technique particulière. Juste de l'observation et de la rigueur dans votre travail.
 
@@ -13,17 +13,17 @@ Objectif : Création d'un Repository GitHUB pour travailler avec son projet
 Difficulté : Très facile (~10 minutes)
 -------------------------------------------------------------------------------------------------------
 GitHUB est une plateforme en ligne utilisée pour stocker le code de son programme.
-GitHUB est organisé en "Repository", c'est à dire en répertoire (contenant lui même des sous répertoires et des fichiers). Chaque Repository sera indépendant les un des autres. Un Repository doit être vu comme un projet unique (1 Repository = 1 Projet).
+GitHUB est organisé en "Repository", c'est à dire en répertoire (contenant lui même des sous répertoires et des fichiers). Chaque Repository sera indépendant les un des autres. Un Repository doit être vu comme un projet unique (1 Repository = 1 Projet). GitHUB est une plateforme très utilisée par les informaticiens.
 
 **Procedure à suivre :**  
 1° - Créez vous un compte sur GitHub : https://github.com/  
-Si besoin, un vidéo pour vous aider à créer votre propre compte GitHUB : [Créer un compte GitHUB](https://docs.github.com/fr/get-started/onboarding/getting-started-with-your-github-account)  
-A noter que si vous possédez déjà un compte GitHUB vous pouvez le conserver pour réaliser cet atelier. Pas besion d'en créer un nouveau.
+Si besoin, une vidéo pour vous aider à créer votre propre compte GitHUB : [Créer un compte GitHUB](https://docs.github.com/fr/get-started/onboarding/getting-started-with-your-github-account)  
+A noter que **si vous possédez déjà un compte GitHUB, vous pouvez le conserver pour réaliser cet atelier**. Pas besion d'en créer un nouveau.
 
 2° - Faites un Fork du Repository suivant : https://github.com/OpenRSI/5MCSI_Metriques.git  
-Si besoin, voici une vidéo d'accompagnement pour vous aider dans les "Forks" : [Forker ce projet](https://youtu.be/p33-7XQ29zQ)    
+Voici une vidéo d'accompagnement pour vous aider dans les "Forks" : [Forker ce projet](https://youtu.be/p33-7XQ29zQ)    
   
-**Travail demandé :** Créé votre compte, faites le fork de ce projet et **copier l'URL de votre Repository GitHUB dans la discussion public**.
+**Travail demandé :** Créé votre compte GitHUB, faites le fork de ce projet et **copier l'URL de votre Repository GitHUB dans la discussion public**.
 
 Notion acquise lors de cette séquence :  
 Vous avez appris lors de cette séquence à créer des Repository pour stocker et travailler avec votre code informatique. Vous pourez par la suite travailler en groupe sur un projet. Vous avez également appris à faire des Forks. C'est à dire, faire des copies de projets déjà existant dans GitHUB que vous pourrez ensuite adapter à vos besoins.
@@ -37,7 +37,7 @@ Difficulté : Faible (~10 minutes)
 
 Rendez-vous sur **https://www.alwaysdata.com/fr/**  
   
-Remarque : **Attention à bien vous rappeler vos Login/Password** lors de la création de votre compte site car vous en aurez besoin plus tard pour la création de vos Secrets GitHUB.
+Remarque : **Attention à bien vous rappeler de vos Login/Password** lors de la création de votre compte site car vous en aurez besoin plus tard pour la création de vos Secrets GitHUB.
 
 **Procédure :**  
 1° - Créez votre compte Alwaysdata (gratuit jusqu'à 100Mo, aucune carte nécéssaire).  
@@ -58,7 +58,7 @@ Voici une vidéo d'accompagnement pour vous aider dans cette séquence de créat
 **Travail demandé :** Mettre en ligne votre application Flask "Hello World !" et **copier l'URL de votre site dans la discussion public**.  
   
 Notions acquises lors de cette séquence :  
-Vous avez créer un hébergement (gratuit) et découvert également que vous pouvez installer bien d'autres applications.
+Vous avez créer un hébergement (gratuit) et découvert également que vous pouvez installer bien d'autres applications (Django, Drupal, Jenkins, Magento, Symphony, etc...). Les perspectives sont nombreuses.
 
 ---------------------------------------------------------------------------------------------
 Séquence 3 : Les Actions GitHUB (Industrialisation Continue)
