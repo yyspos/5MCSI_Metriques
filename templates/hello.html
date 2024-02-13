@@ -109,14 +109,14 @@ Nous allons utiliser une bibliothèque open source fournie par Google pour crée
     });
     // Configurer les options du graphique en ligne
     var options = {
-      title: 'Évolution des températures de Paris pour les 16 prochains jours',
+      title: 'Évolution des températures de la ville de Tawarano',
       curveType: 'function',
       legend: { position: 'bottom' }
     };
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
     chart.draw(dataTable, options);
   }
-  // Récupération de données depuis notre API /paris/
+  // Récupération de données depuis notre API /tawarano/
   fetch('/tawarano/')
     .then(response => response.json())
     .then(data => {
@@ -134,7 +134,7 @@ Vous avez appris à récupérer des données issues d'une API externe (des donn�
 <p>Objectif : Devenir autonome dans la création de ses graphiques.</p>
 <p>A l'aide des graphiques disponibles dans la galerie open source de Google disponibles à l'adresse suivante</p> 
 <p>https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery?hl=fr
-créer un nouveau graphique à colonnes (un histogramme) afin de présenter les températures de Paris pour les 16 prochains jours.
+créer un nouveau graphique à colonnes (un histogramme) afin de présenter l'évolution des températures de la ville de Tawarano.
 Ce nouveau graphique sera accessible sur votre site en ligne via le chemin suivant : https://{Votre URL}/histogramme/</p>
 <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
 <h3>Exercice 5 : Customisation de votre page de contact (3 points) </h3>
