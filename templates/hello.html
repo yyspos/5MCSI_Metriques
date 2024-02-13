@@ -11,8 +11,8 @@
 <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </p>
 <h3>Exercice 2 : Création d'une nouvelle route (2 points)</h3>
 <p>Objectif : Savoir créer des routes (c'est à dire la création d'une nouvelle API)</p>
-L'exercice consiste à créer une nouvelle route accèssible depuis "/contact/" de votre site et qui affichera "Ma page de contact" dans le navigateur de l'internaute.
-L'internaute saisira l'adresse suivante dans son navigateur : <b>https://{Votre URL}/contact/</b> et obtiendra donc le résultat "Ma page de contact". Vous allez pour cela, depuis GitHUB, ajouter le code suivant dans votre fichier <b>__init__.py</b> qui est à la racine de votre Repository précédemment créé :
+L'exercice consiste à créer une nouvelle route accèssible depuis le chemin "/contact/" de votre site et qui affichera "Ma page de contact" dans le navigateur de l'internaute.
+L'internaute saisira l'adresse suivante dans son navigateur : <b>https://{Votre URL}/contact/</b> et obtiendra donc le résultat "Ma page de contact". Vous allez pour cela, depuis GitHUB, <b>ajouter</b> le code suivant dans votre fichier <b></b>__init__.py</b> qui est à la racine de votre Repository précédemment créé :
 <pre><code><xmp>
 @app.route("/contact/")
 def MaPremiereAPI():
@@ -26,25 +26,25 @@ Remarque importante : Ce code est à ajouter après la ligne "app = Flask(__name
 <h3>Exercice 3 : Les données d'une API (3 points)</h3>
 <p>Objectif : Utiliser les données issues d'une API externes pour créer une route adaptée à vos besoins.</p>
 <p>Pour commencer, copier l'URL ci-dessous dans un nouvel onglet de votre navigateur et observez le résultat :</p>
-https://api.openweathermap.org/data/2.5/forecast/daily?q=Paris,fr&cnt=16&appid=bd5e378503939ddaee76f12ad7a97608</p>
-<p>Il s'agit ici des prévisions météorologique de Paris pour les 16 prochains jours.
+https://samples.openweathermap.org/data/2.5/forecast?lat=0&lon=0&appid=xxx</p>
+<p>Il s'agit ici de quelques relévés météorologique de la ville Tawarano réalisées au cours de l'année 2017.
 Vous observerez que nous utilisons une API gratuite fourni par Openweathermap. C'est typiquement le format que vous trouverez dans le cadre des services de métriques (Données issues de serveurs, de réseaux, de stockages, etc..).</p>
 <p>Les API fournissent en général des données au format JSON. JSON est un format structuré avec des étiquettes (également appelé des keys) et ont pour objectif de fournir des données "brut".<br/>
-<b>Prenez ici quelques minutes pour "comprendre" la structure de ces données JSON.</b></p>
+<b>Prenez ici quelques minutes pour "comprendre" la structure de ces données JSON et identifer les clés et les données.</b></p>
 <p>- - - - - </p>
-<p>Ce qui nous intéresse à présent, c'est extraire la valeur de [dt] (c'est à dire les dates) et les valeurs stockées dans la clé [temp][day], c'est à dire les températures du jour.</p>
+<p>Ce qui nous intéresse à présent, c'est extraire la valeur de [dt] (c'est à dire les dates) et les valeurs stockées dans la clé [main][temp], c'est à dire les températures du jour.</p>
 <p>A noter que les dates ici sont au format "Timestamp". C'est à dire que la donnée est le nombre de secondes depuis le 1 janvier 2000 (un légacy d'UNIX). Les températures sont stockées au format Kelvin (il faudra donc les convertir en °C).</p> 
-<p>Vous allez à présent créer une nouvelle route "/paris/" dans votre application Python pour filtrer l'API d'Openweathermap et extraire uniquement les dates et température du jour. Ci-dessous la route à ajouter dans votre application.
+<p>Vous allez à présent créer une nouvelle route "/tawarano/" dans votre application Python pour filtrer l'API d'Openweathermap et extraire uniquement les dates et température du jour. Ci-dessous la route à ajouter dans votre application.
 <pre><code><xmp>
-@app.route('/paris/')
+@app.route('/tawarano/')
 def meteo():
-    response = urlopen('https://api.openweathermap.org/data/2.5/forecast/daily?q=Paris,fr&cnt=16&appid=bd5e378503939ddaee76f12ad7a97608')
+    response = urlopen('https://samples.openweathermap.org/data/2.5/forecast?lat=0&lon=0&appid=xxx')
     raw_content = response.read()
     json_content = json.loads(raw_content.decode('utf-8'))
     results = []
     for list_element in json_content.get('list', []):
         dt_value = list_element.get('dt')
-        temp_day_value = list_element.get('temp', {}).get('day') - 273.15 # Conversion de Kelvin en °c 
+        temp_day_value = list_element.get('main', {}).get('temp') - 273.15 # Conversion de Kelvin en °c 
         results.append({'Jour': dt_value, 'temp': temp_day_value})
     return jsonify(results=results)
 </xmp></code></pre></p>
@@ -117,7 +117,7 @@ Nous allons utiliser une bibliothèque open source fournie par Google pour crée
     chart.draw(dataTable, options);
   }
   // Récupération de données depuis notre API /paris/
-  fetch('/paris/')
+  fetch('/tawarano/')
     .then(response => response.json())
     .then(data => {
       drawChart(data);
