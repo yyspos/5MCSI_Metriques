@@ -89,4 +89,14 @@ Séquence 4 : Exercices
 Objectif : Apprendre à créer votre application de monitoring  
 Difficulté : Moyenne
 ---------------------------------------------------
-Votre solution est à présent en ligne. Rendez-vous sur la page d'accueil de votre site et suivez les instructions pour réaliser les exercices qui vous sont demandés. Bon courage et bon travail à tous.
+Votre solution est à présent en ligne. Rendez-vous sur la page d'accueil de votre site et suivez les instructions pour réaliser les exercices qui vous sont demandés. Bon courage et bon travail à tous.  
+
+--------------------------------------------------------------------
+Troubleshooting :
+---------------------------------------------------
+Objectif : Visualiser ses logs et découvrir ses erreurs
+---------------------------------------------------
+Lors de vos développements, vous serez peut-être confronté à des erreurs systèmes car vous avez faits des erreurs de syntaxes dans votre code, faits de mauvaises déclarations de fonctions, appelez des modules inexistants, mal renseigner vos secrets, etc…  
+Les causes d'erreurs sont quasi illimitées. **Vous devez donc vous tourner vers les logs de votre système pour comprendre d'où vient le problème** :  
+Voici une vidéo pour accéder aux logs de vos Actions GitHUB : [Vidéo Log GitHUB](https://youtu.be/rhGrDLSFH7Y)  
+Voici une vidéo pour vous expliquer comment accéder au logs de votre serveur Alwaysdata : [Vidéo Log Alwaysdata](https://youtu.be/URWMWqVMS2U)  
