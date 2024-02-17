@@ -71,7 +71,7 @@ Dans le Repository GitHUB que vous venez de créer précédemment lors de la sé
 
 Pour utiliser cette Action (CICD.yml), **vous avez besoin de créer des secrets dans GitHUB** afin de ne pas divulguer des informations sensibles aux internautes de passage dans votre Repository comme vos login et password par exemple.  
 
-Pour ce projet Métriques, **vous avez 4 secrets à créer** dans votre Repository GitHUB :
+Pour ce projet Métriques, **vous avez 4 secrets à créer** dans votre Repository GitHUB :  
 **USERNAME** = Le login qui est utilisé pour la connexion SSH.  
 **PASSWORD** = Le mot de passe qui est utilisé pour la connexion SSH.  
 **ALWAYSDATA_TOKEN** = Le token est à créer depuis l'interface d'administration Alwaysdata. Cliquez sur votre profil en haut à droite, puis sur 'Profil' puis sur 'Gérer les tokens'. Laissez le champ "Adresses IP autorisées" vide. Dans le cas contraire vous limiteriez les connexions seulement à une adresse IP. Pour le champ Application* mettez "Metriques" par exemple.  
