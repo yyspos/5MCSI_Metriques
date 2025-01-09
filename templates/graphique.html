@@ -3,29 +3,21 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart', 'bar']});
-      google.charts.setOnLoadCallback(fetchDataAndDrawChart);
+      google.charts.setOnLoadCallback(drawStuff);
 
-      function fetchDataAndDrawChart() {
-        fetch('/tawarano/')
-          .then(response => response.json())
-          .then(data => {
-            drawChart(data);
-          });
-      }
+      function drawStuff() {
 
-      function drawChart(apiData) {
         var button = document.getElementById('change-chart');
         var chartDiv = document.getElementById('chart_div');
 
-        // Convertir les données de l'API en format compatible avec Google Charts
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Galaxy');
-        data.addColumn('number', 'Distance');
-        data.addColumn('number', 'Brightness');
-
-        apiData.forEach(item => {
-          data.addRow([item.galaxy, item.distance, item.brightness]);
-        });
+        var data = google.visualization.arrayToDataTable([
+          ['Galaxy', 'Distance', 'Brightness'],
+          ['Canis Major Dwarf', 8000, 23.3],
+          ['Sagittarius Dwarf', 24000, 4.5],
+          ['Ursa Major II Dwarf', 30000, 14.3],
+          ['Lg. Magellanic Cloud', 50000, 0.9],
+          ['Bootes I', 60000, 13.1]
+        ]);
 
         var materialOptions = {
           width: 900,
@@ -34,13 +26,13 @@
             subtitle: 'distance on the left, brightness on the right'
           },
           series: {
-            0: { axis: 'distance' },
-            1: { axis: 'brightness' }
+            0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
           },
           axes: {
             y: {
-              distance: {label: 'parsecs'},
-              brightness: {side: 'right', label: 'apparent magnitude'}
+              distance: {label: 'parsecs'}, // Left y-axis.
+              brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
             }
           }
         };
@@ -53,6 +45,7 @@
           },
           title: 'Nearby galaxies - distance on the left, brightness on the right',
           vAxes: {
+            // Adds titles to each axis.
             0: {title: 'parsecs'},
             1: {title: 'apparent magnitude'}
           }
@@ -73,7 +66,7 @@
         }
 
         drawMaterialChart();
-      }
+    };
     </script>
   </head>
   <body>
@@ -82,4 +75,3 @@
     <div id="chart_div" style="width: 800px; height: 500px;"></div>
   </body>
 </html>
-
