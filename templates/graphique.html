@@ -1,39 +1,62 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <title>Métrique</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+      // Chargement de la bibliothèque et du package 'corechart'
+      google.charts.load('current', { packages: ['corechart'] });
+      google.charts.setOnLoadCallback(fetchData);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-          }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
+      // Fonction pour récupérer les données depuis l'API
+      function fetchData() {
+        fetch('/tawarano/')
+          .then((response) => response.json())
+          .then((apiData) => {
+            drawChart(apiData.results); // Utilisation de "results" dans le JSON
+          })
+          .catch((error) => {
+            console.error('Erreur lors de la récupération des données:', error);
+          });
       }
 
-      // Récupération de données depuis notre API /tawarano/
-  fetch('/tawarano/')
-    .then(response => response.json())
-    .then(data => {
-      drawChart(data);
+      // Fonction pour dessiner le graphique
+      function drawChart(apiData) {
+        // Transformation des données API en tableau compatible avec Google Charts
+        var dataArray = [['Date', 'Température']];
+        apiData.forEach((item) => {
+          const date = new Date(item.Jour * 1000); // Conversion du timestamp Unix en date
+          const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`; // Format lisible
+          dataArray.push([formattedDate, parseFloat(item.temp)]); // Ajout des données
+        });
+
+        // Données du graphique
+        var data = google.visualization.arrayToDataTable(dataArray);
+
+        // Options de configuration
+        var options = {
+          title: 'Températures par jour',
+          hAxis: {
+            title: 'Date',
+            titleTextStyle: { color: '#333' }
+          },
+          vAxis: {
+            title: 'Température (°C)',
+            minValue: 0
+          },
+          legend: { position: 'none' }
+        };
+
+        // Création et rendu du graphique
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
     </script>
   </head>
   <body>
-    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+    <h1>Graphique à colonnes : Températures</h1>
+    <!-- Conteneur pour le graphique -->
+    <div id="chart_div" style="width: 800px; height: 600px;"></div>
   </body>
 </html>
