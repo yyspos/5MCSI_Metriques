@@ -37,6 +37,11 @@
   </head>
   <body>
     <div id="top_x_div" style="width: 800px; height: 600px;"></div>
+// Récupération de données depuis notre API /tawarano/
+  fetch('/tawarano/')
+    .then(response => response.json())
+    .then(data => {
+      drawChart(data);
   </body>
 </html>
 
