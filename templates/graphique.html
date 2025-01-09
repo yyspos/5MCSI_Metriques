@@ -1,40 +1,34 @@
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Metrique</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  </head>
-  <body>
-    <div id="chart_div"></div>
-    <script>
-      google.charts.load('current', { packages: ['corechart'] });
-      google.charts.setOnLoadCallback(drawBackgroundColor);
-     function drawBackgroundColor() {
-    function drawChart(data) {
-    // Convertir les données récupérées en un tableau utilisable par Google Charts
-    var dataTable = new google.visualization.DataTable();
-    dataTable.addColumn('string', 'Date');
-    dataTable.addColumn('number', 'Valeur');
-    data.results.forEach(entry => {
-      var date = new Date(entry.Jour * 1000);
-      dataTable.addRow([date.toLocaleDateString(), entry.temp]);
-    });
-    // Configurer les options du graphique en ligne
-    var options = {
-      title: 'Évolution des températures de la ville de Tawarano',
-      curveType: 'function',
-      legend: { position: 'bottom' }
-    };
-    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-    chart.draw(dataTable, options);
-  }
-  // Récupération de données depuis notre API /tawarano/
-  fetch('/tawarano/')
-    .then(response => response.json())
-    .then(data => {
-      drawChart(data);
-    })
-}
-    </script>
-  </body>
-</html>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart', 'bar']});
+      google.charts.setOnLoadCallback(fetchDataAndDrawChart);
+
+      function fetchDataAndDrawChart() {
+        fetch('/tawarano/')
+          .then(response => response.json())
+          .then(data => {
+            drawChart(data);
+          });
+      }
+
+      function drawChart(apiData) {
+        var button = document.getElementById('change-chart');
+        var chartDiv = document.getElementById('chart_div');
+
+        // Convertir les données de l'API en format compatible avec Google Charts
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Galaxy');
+        data.addColumn('number', 'Distance');
+        data.addColumn('number', 'Brightness');
+
+        apiData.forEach(item => {
+          data.addRow([item.galaxy, item.distance, item.brightness]);
+        });
+
+        var materialOptions = {
+          width: 900,
+          chart: {
+            title: 'Nearby galaxies',
+            subtitle: 'distance on the left, brightness on the right'
