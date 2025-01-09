@@ -33,15 +33,16 @@
         // Convert the Classic options to Material options.
         chart.draw(data, google.charts.Bar.convertOptions(options));
       };
-    </script>
-  </head>
-  <body>
-    <div id="top_x_div" style="width: 800px; height: 600px;"></div>
-// Récupération de données depuis notre API /tawarano/
+      // Récupération de données depuis notre API /tawarano/
   fetch('/tawarano/')
     .then(response => response.json())
     .then(data => {
       drawChart(data);
+    </script>
+  </head>
+  <body>
+    <div id="top_x_div" style="width: 800px; height: 600px;"></div>
+       
   </body>
 </html>
 
