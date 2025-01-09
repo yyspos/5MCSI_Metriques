@@ -67,6 +67,12 @@
 
         drawMaterialChart();
     };
+
+    // Récupération de données depuis notre API /tawarano/
+  fetch('/tawarano/')
+    .then(response => response.json())
+    .then(data => {
+      drawChart(data);
     </script>
   </head>
   <body>
